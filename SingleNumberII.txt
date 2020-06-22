@@ -1,0 +1,14 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        Map<Integer, Integer> countMap = new HashMap<>();
+        for (int i = 0; i < nums.length; ++i) {
+            countMap.put(nums[i], countMap.getOrDefault(nums[i], 0) + 1);
+        }
+        for (int i = 0; i < nums.length; ++i) {
+            if (countMap.get(nums[i]) == 1) {
+                return nums[i];
+            }
+        }
+        return nums[0];
+    }
+} // beats 55.9% of java submissions
