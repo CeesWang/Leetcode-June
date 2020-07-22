@@ -1,0 +1,14 @@
+class Solution {
+    public int numNodes = 0;
+    public int countNodes(TreeNode root) {
+        countTreeNodes(root);
+        return numNodes;
+    }
+    public void countTreeNodes(TreeNode node) {
+        if (node != null) {
+            numNodes++;
+            countTreeNodes(node.left);
+            countTreeNodes(node.right);
+        }
+    }
+}
